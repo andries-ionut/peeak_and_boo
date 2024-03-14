@@ -1,0 +1,8 @@
+{% extend 'home/blank.html' %}
+{% block content%}
+    <form method="post">
+    {%  csrf_token %}
+    <table> {{ form }}</table>
+    <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+{% endblock %}
