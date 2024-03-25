@@ -40,7 +40,12 @@ INSTALLED_APPS = [
     'produse',
     'authentication',
 
+
 ]
+
+LOGIN_REDIRECT_URL= "home-page" #de pus lin-uk pentru atunci cand ne trimite cand ne logam
+LOGIN_URL = "login" #de pus link-ul pentru unde ne trimite cand ne logam /
+LOGOUT_REDIRECT_URL= "login"#de pus link pentru unde ne trimite cand dam log out
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -1,8 +1,11 @@
 {% extend 'home/blank.html' %}
 {% block content%}
+    {%  if user.id.authentificaiton %}
     <form method="post">
     {%  csrf_token %}
     <table> {{ form }}</table>
     <input type="submit" value="Submit" class="btn btn-primary">
     </form>
+    {% endif %}
+
 {% endblock %}

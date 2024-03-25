@@ -1,4 +1,4 @@
-from django.contrib.auth.views import LoginView, PasswordChangeView, LogoutView
+from django.contrib.auth.views import LoginView, PasswordChangeView, LogoutView, PasswordResetView
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.decorators.debug import sensitive_post_parameters
@@ -8,12 +8,12 @@ from authentication.forms import CreateUserForm
 
 
 # Create your views here.
-sensitive_post_parameters_m = method_decorator(
-    sensitive_post_parameters(
-        'oldpassword', 'password', 'password1', 'password2'))
+
 
 class LoginUserView(LoginView):
     template_name = "authentication/form.html"
+    success_url = reverse_lazy("")  #
+    redirect_authenticated_user = True
 
 
 class UserChangePasswordView(PasswordChangeView):
@@ -28,3 +28,6 @@ class CreateUserView(CreateView):
 
 class LogOutUserView(LogoutView):
     success_url = reverse_lazy("")  # aici dupa ce iesi din cont, template de facut.
+
+class ResetUserPassword(PasswordResetView):
+    success_url = reverse_lazy("")
