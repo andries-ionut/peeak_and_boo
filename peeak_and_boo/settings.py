@@ -62,7 +62,7 @@ ROOT_URLCONF = 'peeak_and_boo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'produse/../produse/template'],
+        'DIRS': [BASE_DIR / 'produse/../produse/../template'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
